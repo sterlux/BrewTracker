@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Endpoints
+// Get all recipes from databse
 app.get("/api/recipes", async (req, res) => {
   try {
     const results = await db.query(
@@ -26,7 +26,7 @@ app.get("/api/recipes", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5002;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
